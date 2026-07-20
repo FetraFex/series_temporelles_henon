@@ -1,0 +1,13 @@
+# Takens embedding configuration (Stage 3)
+input:
+  source: data/processed   # normalized series used for embedding
+
+embedding:
+  target: X               # which series to embed (X | Y)
+  tau: 1                  # delay
+  dim_range: [2, 10]      # candidate embedding dimensions to evaluate
+  method: fnn             # dimension selection method
+
+output:
+  embedded_dir: data/embedded
+  selected_dim: null      # auto-selected if null

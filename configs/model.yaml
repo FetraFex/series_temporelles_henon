@@ -1,0 +1,10 @@
+# MLP model configuration (Stage 4, from scratch)
+architecture:
+  input_dim: null         # derived from embedding dimension
+  hidden_layers: [16, 16]
+  activations: [tanh, tanh]
+  output_activation: linear
+  weight_init: xavier
+
+output:
+  model_dir: models

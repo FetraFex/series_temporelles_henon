@@ -1,0 +1,6 @@
+# Evaluation configuration (Stage 7)
+forecast_horizons: [1, 3, 10, 20]
+metrics: [mse, rmse, mae]
+output:
+  metrics_dir: results/metrics
+  reports_dir: results/reports

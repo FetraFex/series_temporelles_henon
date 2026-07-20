@@ -1,0 +1,16 @@
+# Preprocessing configuration (Stage 2)
+input:
+  x_path: data/raw/henon_X.csv
+  y_path: data/raw/henon_Y.csv
+
+normalization:
+  method: minmax   # minmax | standard | none
+
+split:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  shuffle: false
+
+output:
+  processed_dir: data/processed

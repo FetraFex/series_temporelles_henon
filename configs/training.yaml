@@ -1,0 +1,14 @@
+# Training configuration (Stage 5)
+training:
+  learning_rate: 0.01
+  epochs: 500
+  batch_size: 32
+  loss: mse
+  optimizer: adam
+  early_stopping:
+    enabled: true
+    patience: 30
+    monitor: val_loss
+  checkpoint:
+    enabled: true
+    dir: models/checkpoints

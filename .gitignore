@@ -1,0 +1,28 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated data and models
+data/raw/
+data/processed/
+data/embedded/
+models/
+
+# Results (keep structure, ignore contents)
+results/figures/*
+results/metrics/*
+results/reports/*
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
