@@ -474,7 +474,7 @@ def plot_henon_attractor(
     output_dir: str | Path = "results/figures",
     style: str = "scientific",
     color: str = "#1f77b4",
-    marker_size: float = 1.5,
+    marker_size: float = 2.5,
     opacity: float = 0.6,
     line_width: float = 0.5,
     width: int = 800,
