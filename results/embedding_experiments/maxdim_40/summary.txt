@@ -1,0 +1,5 @@
+n_max = 40
+Dimension detectee : 40
+Plateau trouve : Non
+Erreur minimale : 0.0000000000
+Nombre de valeurs propres : 40

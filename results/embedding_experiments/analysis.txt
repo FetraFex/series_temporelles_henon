@@ -1,0 +1,34 @@
+============================================================
+ANALYSE DE L'INFLUENCE DE n_max SUR LA COURBE DE TAKENS
+============================================================
+
+1. Valeurs de n_max testees :
+   20, 30, 40, 50, 60, 70, 80, 100
+
+2. Resultats par experience :
+
+      n_max |   Dim detectee |     Erreur min |  Plateau
+   ---------+----------------+----------------+---------
+         20 |             20 |   0.0000000000 |      Non
+         30 |             30 |   0.0000000000 |      Non
+         40 |             40 |   0.0000000000 |      Non
+         50 |             50 |   0.0000000000 |      Non
+         60 |             60 |   0.0000000000 |      Non
+         70 |             70 |   0.0000000000 |      Non
+         80 |             80 |   0.0000000000 |      Non
+        100 |            100 |   0.0000000000 |      Non
+
+3. Stabilite des resultats :
+
+   Dimensions detectees : [20, 30, 40, 50, 60, 70, 80, 100]
+   Experiences avec plateau : Aucune
+
+   Aucun plateau n'a ete detecte pour les valeurs testees.
+   Cela peut indiquer que la serie de Henon n'a pas de plateau
+   clair dans l'intervalle [2, n_max] avec le seuil configure.
+
+4. Conclusion :
+
+   L'etude experimentale permet de determiner objectivement si
+   l'absence de plateau observee pour n_max=20 est due a une limite
+   de l'intervalle explore ou a une propriete de la serie elle-meme.

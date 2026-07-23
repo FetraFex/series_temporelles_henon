@@ -1,0 +1,5 @@
+n_max = 70
+Dimension detectee : 70
+Plateau trouve : Non
+Erreur minimale : 0.0000000000
+Nombre de valeurs propres : 70
