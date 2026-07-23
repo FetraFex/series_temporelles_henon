@@ -15,19 +15,14 @@ def compute_embedding_error(
     m: int,
 ) -> float:
     """
-    Calcule l'erreur moyenne d'approximation E(m) pour une dimension m.
+    Calcule l'erreur d'approximation E(m) pour une dimension m.
 
-    Formule (méthode du cours — ACP / Karhunen-Loève) :
-        E(m) = √( Σ(j=m à d-1) λⱼ )
+    Formule :
+        E(m) = √( λ_{m+1} )
 
-    où :
-        d   = nombre total de valeurs propres (dimension max)
-        m   = dimension candidate testée
-        λⱼ  = j-ème valeur propre (ordonnée décroissante)
-
-    L'erreur E(m) représente la racine de la somme des valeurs propres
-    « écartées » lorsqu'on retient uniquement les m premières composantes
-    principales. Elle quantifie la perte d'information due à la troncature.
+    où λ_{m+1} est la (m+1)-ème valeur propre (ordonnée décroissante).
+    Cette erreur représente la contribution de la première composante
+    écartée par la troncature à la dimension m.
 
     Parameters
     ----------
@@ -40,14 +35,7 @@ def compute_embedding_error(
     -------
     float
         Erreur E(m) >= 0.
-
-    Notes
-    -----
-    Cette fonction est isolée par design : elle encapsule la formule
-    du cours et peut être remplacée sans toucher au reste du projet.
-    La formule ci-dessus est la valeur par défaut du projet.
     """
-    # On somme les valeurs propres d'indice m à la fin
-    # (ce sont les composantes écartées par la troncature)
-    remaining = eigenvalues[m:]
-    return float(np.sqrt(np.sum(remaining)))
+    if m >= len(eigenvalues):
+        return 0.0
+    return float(np.sqrt(eigenvalues[m]))

@@ -151,10 +151,10 @@ class TestEmbeddingError:
             assert errors[i] >= errors[i + 1]
 
     def test_first_is_total(self) -> None:
-        """E(0) = √(somme de toutes les valeurs propres)."""
+        """E(0) = √(λ₁) — première valeur propre."""
         eigenvalues = np.array([4.0, 3.0, 2.0, 1.0])
         e0 = compute_embedding_error(eigenvalues, 0)
-        expected = np.sqrt(np.sum(eigenvalues))
+        expected = np.sqrt(eigenvalues[0])
         assert abs(e0 - expected) < 1e-10
 
     def test_last_is_zero(self) -> None:

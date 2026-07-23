@@ -69,14 +69,14 @@ def evaluate_embedding_dimensions(
     eigenvalues, _ = compute_eigendecomposition(cov_matrix)
 
     # Étape 5 : calcul vectorisé de l'erreur pour chaque m
-    # E(m) = √(Σ(j=m à d-1) λⱼ) = √(somme cumulative inversée)
-    cumulative_sum = np.cumsum(eigenvalues[::-1])[::-1]
-
+    # E(m) = √(λ_{m+1}) — erreur basée sur la première composante écartée
     dimensions = np.arange(min_dimension, max_dimension + 1)
     errors = np.zeros(len(dimensions), dtype=float)
 
     for idx, m in enumerate(dimensions):
-        remaining_sum = cumulative_sum[m] if m < len(cumulative_sum) else 0.0
-        errors[idx] = np.sqrt(remaining_sum)
+        if m < len(eigenvalues):
+            errors[idx] = np.sqrt(eigenvalues[m])
+        else:
+            errors[idx] = 0.0
 
     return dimensions, errors

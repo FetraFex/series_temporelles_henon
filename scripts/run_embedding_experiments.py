@@ -82,13 +82,15 @@ def run_single_experiment(
     eigenvalues, _ = compute_eigendecomposition(cov_matrix)
 
     # Étape 4 : Calcul vectorisé de l'erreur pour chaque m
-    cumulative_sum = np.cumsum(eigenvalues[::-1])[::-1]
+    # E(m) = √(λ_{m+1}) — erreur basée sur la première composante écartée
     dimensions = np.arange(min_dim, max_dim + 1)
     errors = np.zeros(len(dimensions), dtype=float)
 
     for idx, m in enumerate(dimensions):
-        remaining_sum = cumulative_sum[m] if m < len(cumulative_sum) else 0.0
-        errors[idx] = np.sqrt(remaining_sum)
+        if m < len(eigenvalues):
+            errors[idx] = np.sqrt(eigenvalues[m])
+        else:
+            errors[idx] = 0.0
 
     # Étape 5 : Détection du plateau
     optimal_dim = find_first_plateau(

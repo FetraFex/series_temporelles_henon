@@ -1,5 +1,5 @@
 n_max = 100
-Dimension detectee : 3
+Dimension detectee : 6
 Plateau trouve : Oui
 Erreur minimale : 0.0000000000
 Nombre de valeurs propres : 100
