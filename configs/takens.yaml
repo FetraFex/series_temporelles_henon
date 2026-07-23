@@ -3,7 +3,7 @@
 delay: 1
 auto_delay: false
 min_dimension: 2
-max_dimension: 20
+max_dimension: 30
 plateau_threshold: 0.05
 plateau_min_consecutive: 2
 center_covariance: false

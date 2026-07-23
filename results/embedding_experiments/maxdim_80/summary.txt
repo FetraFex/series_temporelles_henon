@@ -1,5 +1,0 @@
-n_max = 80
-Dimension detectee : 4
-Plateau trouve : Oui
-Erreur minimale : 0.0000000000
-Nombre de valeurs propres : 80
