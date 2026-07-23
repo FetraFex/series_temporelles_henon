@@ -1,0 +1,37 @@
+============================================================
+ANALYSE DE L'INFLUENCE DU SEUIL SUR LA DÉTECTION DU PLATEAU
+============================================================
+
+1. Données utilisées :
+   Expérience n_max = 20
+   Nombre de points : 19
+   E(2) = 2.938091
+   E(20) = 0.000000
+
+2. Résultats par seuil :
+
+      Seuil | Dim optimale |  Plateau |   Sous seuil
+   ---------+--------------+----------+-------------
+      0.001 |           20 |      Non |     0/18
+      0.005 |           20 |      Non |     0/18
+      0.010 |           20 |      Non |     0/18
+      0.020 |           20 |      Non |     0/18
+      0.050 |            8 |      Oui |    10/18
+      0.100 |            3 |      Oui |    17/18
+      0.150 |            3 |      Oui |    18/18
+      0.200 |            3 |      Oui |    18/18
+
+3. Analyse :
+
+   Le premier plateau est détecté pour le seuil θ = 0.050
+   → Dimension optimale = 8
+
+   Cela suggère que le seuil original (0.001) était trop strict
+   pour cette série de Hénon. Un seuil plus élevé est nécessaire
+   pour capturer la zone de ralentissement relatif.
+
+4. Recommandation :
+
+   Pour la suite du projet (RNN), il est recommandé de :
+   - Utiliser une dimension d'embedding de 4-5 (valeur typique pour Hénon)
+   - Ou utiliser le seuil optimal trouvé dans cette analyse

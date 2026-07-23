@@ -1,5 +1,5 @@
 n_max = 20
-Dimension detectee : 20
-Plateau trouve : Non
+Dimension detectee : 8
+Plateau trouve : Oui
 Erreur minimale : 0.0000000000
 Nombre de valeurs propres : 20

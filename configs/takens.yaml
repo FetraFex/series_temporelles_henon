@@ -4,7 +4,7 @@ delay: 1
 auto_delay: false
 min_dimension: 2
 max_dimension: 20
-plateau_threshold: 0.001
+plateau_threshold: 0.05
 plateau_min_consecutive: 2
 center_covariance: false
 output_directory: results/embedding
