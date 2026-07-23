@@ -1,0 +1,4 @@
+Dimension optimale : 20
+Methode : ACP / Karhunen-Loève (Broomhead & King)
+Seuil : 0.001, Pas consécutifs : 2
+Plage testée : [2, 20]

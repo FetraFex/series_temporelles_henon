@@ -1,3 +1,3 @@
-from .attractor import plot_henon_attractor
+from .embedding_error import plot_embedding_error
 
-__all__ = ["plot_henon_attractor"]
+__all__ = ["plot_embedding_error"]
