@@ -85,10 +85,11 @@ class BackPropagation:
         y_val: np.ndarray | None = None,
         epochs: int = 500,
         patience: int = 30,
+        tolerance: float = 1e-5,
         verbose: bool = True,
     ) -> dict:
         """
-        Entraîne le réseau avec early stopping optionnel.
+        Entraîne le réseau avec early stopping et tolérance d'erreur.
 
         Parameters
         ----------
@@ -104,6 +105,9 @@ class BackPropagation:
             Nombre maximum d'epochs.
         patience : int
             Nombre d'epochs sans amélioration avant arrêt.
+        tolerance : float
+            Seuil de tolérance sur la variation de la perte.
+            Si |loss_{t} - loss_{t-1}| < tolerance, arrêt.
         verbose : bool
             Affiche les logs.
 
@@ -116,11 +120,22 @@ class BackPropagation:
 
         best_val_loss = float("inf")
         epochs_without_improvement = 0
+        prev_train_loss = float("inf")
 
         for epoch in range(epochs):
             # Entraînement
             train_loss = self.train_epoch(X_train, y_train)
             history["train_loss"].append(train_loss)
+
+            # Vérification de la tolérance (convergence)
+            if abs(train_loss - prev_train_loss) < tolerance:
+                if verbose:
+                    logger.info(
+                        f"Convergence atteinte à l'epoch {epoch + 1} "
+                        f"(variation < {tolerance})"
+                    )
+                break
+            prev_train_loss = train_loss
 
             # Validation
             if X_val is not None and y_val is not None:
