@@ -1,0 +1,20 @@
+
+========================================
+TRAINING SUMMARY
+========================================
+
+Architecture : 6-8-1
+
+Initial loss : 0.9639513089
+
+Final loss : 0.0636362550
+
+Best validation loss : 0.0745689726
+
+Epoch best model : 864
+
+Total epochs : 864
+
+Training time : 1.6260s
+
+========================================
